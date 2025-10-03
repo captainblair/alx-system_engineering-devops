@@ -1,2 +1,3 @@
 #!/bin/bash
-echo $(echo $PATH | tr ':' ' ' | wc -w)
+# Count non-empty directories in PATH
+echo $PATH | tr ':' '\n' | grep -v "^$" | wc -l | tr -d ' '
