@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $PATH | awk -F: '{for(i=1;i<=NF;i++) if($i!="") count++} END{print count+0}'
+echo $PATH | tr ':' '\n' | grep -v '^$' | wc -l
